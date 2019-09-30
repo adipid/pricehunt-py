@@ -16,8 +16,6 @@ def get_lowest_price(url):
     name = product_name.text.strip()
     price = lowest_price_shop[0]["data-price"]
 
-    #print(name)
-
     name_price = name + ", " + price
 
     return name_price
