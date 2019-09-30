@@ -7,7 +7,7 @@ soup = ""
 
 
 # Returns the lowest price of the product in the URL
-def check_price(url):
+def get_lowest_price(url):
     soup = get_request(url)
 
     lowest_price_shop = soup.find_all('div', attrs={'class': 'product-price'})
@@ -20,7 +20,7 @@ def check_price(url):
 
 def compare_prices(url, old_price):
     old_price = int(old_price)
-    lowest_price = int(check_price(url))
+    lowest_price = int(get_lowest_price(url))
 
     if old_price > lowest_price:
         difference = old_price - lowest_price
