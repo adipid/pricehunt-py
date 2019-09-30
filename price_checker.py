@@ -12,12 +12,12 @@ def get_lowest_price(url):
 
     lowest_price_shop = soup.find_all('div', attrs={'class': 'product-price'})
 
-    name = get_product_name()
     price = lowest_price_shop[0]["data-price"]
 
     return price
 
 
+# Returns the difference between the purchased price and the lowest price online
 def compare_prices(url, old_price):
     old_price = int(old_price)
     lowest_price = int(get_lowest_price(url))
@@ -30,6 +30,7 @@ def compare_prices(url, old_price):
     return get_product_name() + ", " + str(difference)
 
 
+# Get request for the URL and generates the soup
 def get_request(url):
     response = requests.get(url)
     global soup
@@ -37,7 +38,7 @@ def get_request(url):
     return soup
 
 
-# Cannot be used unless the get_request has been initialized
+# Cannot be used unless the get_request() has been initialized
 def get_product_name():
     global soup
 
