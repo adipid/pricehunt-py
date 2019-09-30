@@ -10,8 +10,15 @@ def get_lowest_price(url):
 
     soup = BeautifulSoup(response.text, "html.parser")
 
+    product_name = soup.find('h1', attrs={'class': 'product-title'})
     lowest_price_shop = soup.find_all('div', attrs={'class': 'product-price'})
 
+    name = product_name.text.strip()
     price = lowest_price_shop[0]["data-price"]
 
-    return price
+    #print(name)
+
+    name_price = name + ", " + price
+
+    return name_price
+
