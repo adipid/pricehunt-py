@@ -2,6 +2,7 @@ import sys
 
 import price_checker
 import json
+from pprint import pprint
 
 from product import Product
 
@@ -13,18 +14,12 @@ def load_json(filename):
 
 
 products_data = load_json("products.json")
+products_list = []
 
 
 def main():
-    products_list = []
-
     for i in range(len(products_data["products"])):
         products_list.append(Product(products_data["products"][i]))
-
-    # Compare prices
-    for i in range(len(products_list)):
-        print(products_list[i].name + ", " +
-              price_checker.compare_prices(products_list[i].price, products_list[i].purchased_price))
 
     menu()
 
@@ -78,8 +73,14 @@ def remove_product():
 
 
 def display_list():
-    # test
-    print()
+    index = 1
+    for product in products_list:
+        print(str(index) + "\t" + "Name: " + product.name +
+              "\n\t" + "Purchase price: " + product.purchased_price +
+              "\n\t" + "Lowest price: " + product.price +
+              "\n\t" + "Price difference: " + product.price_difference +
+              "\n\t" + "Purchase date: " + product.purchased_date + "\n")
+        index += 1
 
 
 if __name__ == '__main__':
