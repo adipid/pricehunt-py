@@ -1,9 +1,5 @@
 import sys
-
-import price_checker
 import json
-from pprint import pprint
-
 from product import Product
 
 
