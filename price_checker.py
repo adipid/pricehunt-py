@@ -9,3 +9,4 @@ def compare_prices(lowest_price, old_price):
         difference = lowest_price - old_price
 
     return str(difference)
+

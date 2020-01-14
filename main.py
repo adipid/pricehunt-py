@@ -75,7 +75,8 @@ def display_list():
               "\n\t" + "Purchase price: " + product.purchased_price +
               "\n\t" + "Lowest price: " + product.price +
               "\n\t" + "Price difference: " + product.price_difference +
-              "\n\t" + "Purchase date: " + product.purchased_date + "\n")
+              "\n\t" + "Purchase date: " + str(product.purchased_date) +
+              "\n\t" + "Days since purchase: " + str(product.open_policy) + "\n")
         index += 1
 
 
