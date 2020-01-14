@@ -35,7 +35,7 @@ def menu():
                    "2: Remove product(s) from the list\n"
                    "3: See details from the list\n"
                    "4: Quit\n\n"
-                   "Please enter your choice:")
+                   "Please enter your choice: ")
     if choice == "1":
         add_product()
     elif choice == "2":
@@ -70,8 +70,11 @@ def add_product():
 
 
 def remove_product():
-    # test
-    print()
+    remove_index = input("Which product do you want to remove? ")
+    products_data["products"].pop(int(remove_index))
+
+    with open("products.json", "w") as json_file:
+        json.dump(products_data, json_file, indent=2)
 
 
 def display_list():
