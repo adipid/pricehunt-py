@@ -27,7 +27,7 @@ def compare_prices(url, old_price):
     else:
         difference = lowest_price - old_price
 
-    return get_product_name() + ", " + str(difference)
+    return str(difference)
 
 
 # Get request for the URL and generates the soup

@@ -10,7 +10,7 @@ class PriceCheckerTest(unittest.TestCase):
 
     def test_compare_prices(self):
         price = price_checker.compare_prices("https://prisguiden.no/produkt/logitech-mx-master-3-399986", "1199")
-        self.assertEqual("Logitech MX Master 3, 200", price)
+        self.assertEqual("200", price)
 
 
 if __name__ == '__main__':
