@@ -1,0 +1,20 @@
+{
+  "stores": [
+    {
+      "name": "Elkjøp",
+      "policy": 50
+    },
+    {
+      "name": "Komplett.no",
+      "policy": 60
+    },
+    {
+      "name": "Power",
+      "policy": 30
+    },
+    {
+      "name": "XXL",
+      "policy": 30
+    }
+  ]
+}

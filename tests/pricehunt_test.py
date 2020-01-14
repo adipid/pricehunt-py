@@ -37,6 +37,15 @@ class PricehuntTest(unittest.TestCase):
         diff = price_checker.compare_prices(products_list[0].price, products_list[0].purchased_price)
         self.assertEqual("200", diff)
 
+    def test_open_policyFalse(self):
+        self.assertFalse(price_checker.open_policy(61, "Komplett.no"))
+
+    def test_open_policyTrue0(self):
+        self.assertTrue(price_checker.open_policy(60, "Komplett.no"))
+
+    def test_open_policyTrue1(self):
+        self.assertTrue(price_checker.open_policy(10, "Komplett.no"))
+
 
 if __name__ == '__main__':
     unittest.main()

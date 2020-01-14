@@ -9,3 +9,4 @@
 - Add product(s) to the `JSON`-file through the main menu
 - Remove product(s) to the `JSON`-file through the main menu
 - Display the products in the `JSON`-file through the main menu
+- See if you are eligible to use the *open policy* offered by some Norwegian stores.

@@ -23,3 +23,8 @@ class Product:
         today = date.today()
 
         self.days_since_purchase = str((today - self.purchased_date).days)
+        open_policy = price_checker.open_policy(self.days_since_purchase, self.shop)
+        if open_policy:
+            self.open_policy = "Yes"
+        else:
+            self.open_policy = "No"
