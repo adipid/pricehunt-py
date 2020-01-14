@@ -3,14 +3,11 @@ from bs4 import BeautifulSoup
 
 
 class Product:
-    name = ""
-
-    def __init__(self, json):
-
-        url = json["url"]
-        self.purchased_price = json["purchase_price"]
-        self.purchased_date = json["purchase_price"]
-        self.shop = json["shop"]
+    def __init__(self, data):
+        url = data["url"]
+        self.purchased_price = data["purchase_price"]
+        self.purchased_date = data["purchase_price"]
+        self.shop = data["shop"]
 
         response = requests.get(url)
         self.soup = BeautifulSoup(response.text, "html.parser")
