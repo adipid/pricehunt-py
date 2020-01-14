@@ -8,16 +8,15 @@ def main():
     products_data = load_json("products.json")
 
     products_list = []
-    for i in range(len(products_data["products"])):
-        products_list.append(Product(products_data["products"][i]["url"]))
 
-    print(products_list[0].name)
+    for i in range(len(products_data["products"])):
+        products_list.append(Product(products_data["products"][i]))
+
+    #print(products_list[0].shop)
 
     # Compare prices
-    #for i in range(len(products_data["products"])):
-     #   url = products_data["products"][i]["url"]
-      #  purchase_price = products_data["products"][i]["purchase_price"]
-       # print(price_checker.compare_prices(url, purchase_price))
+    for i in range(len(products_list)):
+        print(products_list[i].name + ", " + price_checker.compare_prices(products_list[i].price, products_list[i].purchased_price))
 
 
 def load_json(filename):
