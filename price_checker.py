@@ -23,8 +23,8 @@ def compare_prices(lowest_price, old_price):
 def open_policy(days_since_purchase, store):
     days_since_purchase = int(days_since_purchase)
 
-    for i in range(len(store_policy["stores"])):
-        if store_policy["stores"][i]["name"] == store:
-            if store_policy["stores"][i]["policy"] >= days_since_purchase:
+    for i in range(len(store_policy)):
+        if store_policy[i]["name"] == store:
+            if store_policy[i]["policy"] >= days_since_purchase:
                 return True
     return False
