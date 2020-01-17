@@ -14,10 +14,13 @@ products_list = []
 
 
 def main():
+    product_init()
+    menu()
+
+
+def product_init():
     for i in range(len(products_data)):
         products_list.append(Product(products_data[i]))
-
-    menu()
 
 
 def menu():

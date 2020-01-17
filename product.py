@@ -7,18 +7,19 @@ import price_checker
 
 class Product:
     def __init__(self, data):
-        url = data["url"]
+        self.url = data["url"]
         self.purchased_price = data["purchase_price"]
         self.purchased_date = data["purchase_date"]
         self.purchased_date = datetime.strptime(self.purchased_date, "%Y-%m-%d").date()
         self.shop = data["shop"]
 
-        response = requests.get(url)
+        response = requests.get(self.url)
         self.soup = BeautifulSoup(response.text, "html.parser")
 
         self.name = self.soup.find('h1', attrs={'class': 'product-title'}).text.strip()
         self.price = self.soup.find_all('div', attrs={'class': 'product-price'})[0]["data-price"]
         self.price_difference = price_checker.compare_prices(self.price, self.purchased_price)
+        self.last_check_price = 0
 
         today = date.today()
 
