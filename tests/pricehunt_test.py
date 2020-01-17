@@ -18,8 +18,8 @@ products_list = []
 class PricehuntTest(unittest.TestCase):
 
     def setUp(self):
-        for i in range(len(products_data["products"])):
-            products_list.append(Product(products_data["products"][i]))
+        for i in range(len(products_data)):
+            products_list.append(Product(products_data[i]))
 
     def test_correct_product0(self):
         self.assertEqual("Logitech MX Master 3", products_list[0].name)

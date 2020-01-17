@@ -1,28 +1,26 @@
-{
-  "products": [
-    {
-      "url": "https://prisguiden.no/produkt/logitech-mx-master-3-399986",
-      "purchase_date": "2019-09-25",
-      "purchase_price": "1199",
-      "shop": "Elkjøp"
-    },
-    {
-      "url": "https://prisguiden.no/produkt/logitech-mx-keys-399989",
-      "purchase_date": "2019-09-25",
-      "purchase_price": "1199",
-      "shop": "Elkjøp"
-    },
-    {
-      "url": "https://prisguiden.no/produkt/apple-watch-series-5-cellular-44mm-400845",
-      "purchase_date": "2019-09-13",
-      "purchase_price": "6190",
-      "shop": "Komplett.no"
-    },
-    {
-      "url": "https://prisguiden.no/produkt/apple-watch-series-5-cellular-44mm-400845",
-      "purchase_date": "2020-01-13",
-      "purchase_price": "6200",
-      "shop": "Komplett.no"
-    }
-  ]
-}
+[
+  {
+    "url": "https://prisguiden.no/produkt/logitech-mx-master-3-399986",
+    "purchase_date": "2019-09-25",
+    "purchase_price": "1199",
+    "shop": "Elkjøp"
+  },
+  {
+    "url": "https://prisguiden.no/produkt/logitech-mx-keys-399989",
+    "purchase_date": "2019-09-25",
+    "purchase_price": "1199",
+    "shop": "Elkjøp"
+  },
+  {
+    "url": "https://prisguiden.no/produkt/apple-watch-series-5-cellular-44mm-400845",
+    "purchase_date": "2019-09-13",
+    "purchase_price": "6190",
+    "shop": "Komplett.no"
+  },
+  {
+    "url": "https://prisguiden.no/produkt/apple-watch-series-5-cellular-44mm-400845",
+    "purchase_date": "2020-01-13",
+    "purchase_price": "6200",
+    "shop": "Komplett.no"
+  }
+]

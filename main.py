@@ -14,8 +14,8 @@ products_list = []
 
 
 def main():
-    for i in range(len(products_data["products"])):
-        products_list.append(Product(products_data["products"][i]))
+    for i in range(len(products_data)):
+        products_list.append(Product(products_data[i]))
 
     menu()
 
@@ -54,7 +54,7 @@ def add_product():
         "shop": shop
     }
 
-    products_data["products"].append(new_product)
+    products_data.append(new_product)
 
     with open("products.json", "w") as json_file:
         json.dump(products_data, json_file, indent=2)
@@ -62,7 +62,7 @@ def add_product():
 
 def remove_product():
     remove_index = input("Which product do you want to remove? ")
-    products_data["products"].pop(int(remove_index))
+    products_data.pop(int(remove_index))
 
     with open("products.json", "w") as json_file:
         json.dump(products_data, json_file, indent=2)

@@ -1,5 +1,4 @@
-{
-  "products": [
+[
     {
       "url": "https://prisguiden.no/produkt/logitech-mx-master-3-399986",
       "purchase_date": "2019-09-25",
@@ -18,5 +17,4 @@
       "purchase_price": "6190",
       "shop": "Komplett.no"
     }
-  ]
-}
+]
