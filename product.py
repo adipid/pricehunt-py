@@ -12,6 +12,7 @@ class Product:
         self.purchased_date = data["purchase_date"]
         self.purchased_date = datetime.strptime(self.purchased_date, "%Y-%m-%d").date()
         self.shop = data["shop"]
+        self.last_check_price = data["last_checked_price"]
 
         response = requests.get(self.url)
         self.soup = BeautifulSoup(response.text, "html.parser")
@@ -19,7 +20,6 @@ class Product:
         self.name = self.soup.find('h1', attrs={'class': 'product-title'}).text.strip()
         self.price = self.soup.find_all('div', attrs={'class': 'product-price'})[0]["data-price"]
         self.price_difference = price_checker.compare_prices(self.price, self.purchased_price)
-        self.last_check_price = 0
 
         today = date.today()
 
