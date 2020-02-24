@@ -1,3 +1,4 @@
+import os
 import sys
 import json
 from product import Product
@@ -9,7 +10,9 @@ def load_json(filename):
         return imported_file
 
 
-products_data = load_json("products.json")
+cwd = os.path.dirname(os.path.realpath(__file__))
+
+products_data = load_json(r"" + cwd + "/" + "products.json")
 products_list = []
 
 
