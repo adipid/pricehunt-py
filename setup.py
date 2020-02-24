@@ -28,23 +28,19 @@ def product_init():
 
 def menu():
     print("************MAIN MENU**************\n"
-          "Please enter a number\n0")
-    choice = input("1: Add new product(s) to the list\n"
-                   "2: Remove product(s) from the list\n"
-                   "3: See details from the list\n"
-                   "4: Quit\n\n"
-                   "Please enter your choice: ")
-    if choice == "1":
-        add_product()
-    elif choice == "2":
-        remove_product()
-    elif choice == "3":
-        detailed_list()
-    elif choice == "4" or choice.lower() == "q":
-        sys.exit()
-    else:
-        print("You must only select from the menu provided\nPlease try again!")
-        menu()
+          "Please enter a number\n"
+          "1: Add new product(s) to the list\n"
+          "2: Remove product(s) from the list\n"
+          "3: See details from the list\n"
+          "4: Quit\n\n")
+    while True:
+        choice = input("Please enter your choice: ")
+        if choice not in menu_options:
+            print("Please select from the menu above")
+            continue
+        break
+
+    menu_options[choice]()
 
 
 def add_product():
@@ -108,6 +104,14 @@ def detailed_list():
               "\n\t" + "Can you use open policy: " + str(product.open_policy) + "\n")
         index += 1
 
+
+menu_options = {
+    "1": add_product,
+    "2": remove_product,
+    "3": detailed_list,
+    "4": sys.exit,
+    "q": sys.exit
+}
 
 if __name__ == '__main__':
     main()
