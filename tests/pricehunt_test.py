@@ -46,6 +46,14 @@ class PricehuntTest(unittest.TestCase):
     def test_open_policyTrue1(self):
         self.assertTrue(price_checker.open_policy(10, "Komplett.no"))
 
+    def test_add_product(self):
+        self.fail()
+
+    def test_remove_product(self):
+        self.fail()
+
+    def test_get_list(self):
+        self.fail()
 
 if __name__ == '__main__':
     unittest.main()
