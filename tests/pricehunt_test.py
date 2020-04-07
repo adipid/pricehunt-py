@@ -1,11 +1,7 @@
 import json
 import os
 import unittest
-
-try:
-    from . import price_checker
-except:
-    import price_checker
+import price_checker
 
 from product import Product
 
