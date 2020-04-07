@@ -1,4 +1,5 @@
 import json
+import os
 import unittest
 
 try:
@@ -15,7 +16,8 @@ def load_json(filename):
         return imported_file
 
 
-products_data = load_json("test-products.json")
+cwd = os.path.dirname(os.path.realpath(__file__))
+products_data = load_json(r"" + cwd + "/test-products.json")
 products_list = []
 
 
