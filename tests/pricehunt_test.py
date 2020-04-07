@@ -1,7 +1,11 @@
 import json
 import unittest
 
-import price_checker
+try:
+    from . import price_checker
+except:
+    import price_checker
+
 from product import Product
 
 
@@ -54,6 +58,7 @@ class PricehuntTest(unittest.TestCase):
     #
     # def test_get_list(self):
     #     self.fail()
+
 
 if __name__ == '__main__':
     unittest.main()
