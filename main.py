@@ -3,7 +3,6 @@ import sys
 import json
 from product import Product
 
-
 json_filename = "products.json"
 cwd = os.path.dirname(os.path.realpath(__file__))
 products_data = {}
@@ -42,7 +41,8 @@ def menu():
           "1: Add new product(s) to the list\n"
           "2: Remove product(s) from the list\n"
           "3: See details from the list\n"
-          "4: Quit\n\n")
+          "4: Run checker\n"
+          "5: Quit\n\n")
     while True:
         choice = input("Please enter your choice: ")
         if choice not in menu_options:
@@ -114,11 +114,16 @@ def detailed_list():
         index += 1
 
 
+def run_checker():
+    os.system("python3 background.py")
+
+
 menu_options = {
     "1": add_product,
     "2": remove_product,
     "3": detailed_list,
-    "4": sys.exit,
+    "4": run_checker,
+    "5": sys.exit,
     "q": sys.exit
 }
 
