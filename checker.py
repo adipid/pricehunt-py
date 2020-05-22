@@ -5,10 +5,9 @@ import main
 
 SCRIPT_NAME = "Pricehunt-py"
 
-main.product_init()
+main.check_if_data_exists()
 product_data = main.load_json(r"" + main.cwd + "/" + "products.json")
 
-pync.notify("Started the background script!", title=SCRIPT_NAME)
 
 for index, product in enumerate(main.products_list):
     if int(product_data[index]["last_checked_price"]) > int(product.price_difference):

@@ -21,17 +21,19 @@ def check_if_data_exists():
         file.write("[]")
         file.close()
 
-
-def main():
-    check_if_data_exists()
     global products_data
     products_data = load_json(r"" + cwd + "/" + json_filename)
     product_init()
+
+
+def main():
+    check_if_data_exists()
     menu()
 
 
 def product_init():
     for i in range(len(products_data)):
+        global products_list
         products_list.append(Product(products_data[i]))
 
 
@@ -82,6 +84,7 @@ def add_product():
     }
 
     # Adds the product to the existing list
+    global products_list
     products_list.append(Product(new_product))
 
     # Adds the product to the  data
@@ -103,6 +106,7 @@ def remove_product():
     remove_index = int(input("Which product do you want to remove? ")) - 1
 
     # Removes the product from existing list
+    global products_list
     products_list.pop(int(remove_index))
 
     # Removes the product from the json-file data
@@ -117,6 +121,7 @@ def remove_product():
 
 def detailed_list():
     index = 1
+    global products_list
     for product in products_list:
         print(str(index) + "\t" + "Name: " + product.name +
               "\n\t" + "Purchase price: " + product.purchased_price +
