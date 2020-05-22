@@ -12,7 +12,7 @@ class Product:
         self.purchased_date = data["purchase_date"]
         self.purchased_date = datetime.strptime(self.purchased_date, "%Y-%m-%d").date()
         self.shop = data["shop"]
-        self.last_check_price = data["last_checked_price"]
+        self.last_check_price = 0
 
         response = requests.get(self.url)
         self.soup = BeautifulSoup(response.text, "html.parser")

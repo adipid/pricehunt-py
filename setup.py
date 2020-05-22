@@ -12,6 +12,11 @@ def load_json(filename):
 
 cwd = os.path.dirname(os.path.realpath(__file__))
 
+if not os.path.isfile("products.json"):
+    file = open("products.json", "w")
+    file.write("[]")
+    file.close()
+
 products_data = load_json(r"" + cwd + "/" + "products.json")
 products_list = []
 
