@@ -53,6 +53,16 @@ def menu():
     menu_options[choice]()
 
 
+def return_to_menu():
+    want_to_return = input("Return to main menu? Yes/No\n")
+    if want_to_return == "Yes".lower() or want_to_return == "y".lower():
+        print("\nReturning to main menu\n")
+        menu()
+    else:
+        print("Exiting...")
+        menu_options["q"]()
+
+
 def add_product():
     """
     Add product(s) to the product-list and updates json-data
@@ -81,6 +91,8 @@ def add_product():
     with open(json_filename, "w") as json_file:
         json.dump(products_data, json_file, indent=2)
 
+    return_to_menu()
+
 
 def remove_product():
     """
@@ -100,6 +112,8 @@ def remove_product():
     with open(json_filename, "w") as json_file:
         json.dump(products_data, json_file, indent=2)
 
+    return_to_menu()
+
 
 def detailed_list():
     index = 1
@@ -113,9 +127,12 @@ def detailed_list():
               "\n\t" + "Can you use open policy: " + str(product.open_policy) + "\n")
         index += 1
 
+    return_to_menu()
+
 
 def run_checker():
     os.system("python3 checker.py")
+    return_to_menu()
 
 
 menu_options = {
