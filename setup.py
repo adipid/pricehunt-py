@@ -4,24 +4,29 @@ import json
 from product import Product
 
 
-def load_json(filename):
-    with open(filename) as json_file:
+json_filename = "products.json"
+cwd = os.path.dirname(os.path.realpath(__file__))
+products_data = {}
+products_list = []
+
+
+def load_json(path):
+    with open(path) as json_file:
         imported_file = json.load(json_file)
         return imported_file
 
 
-cwd = os.path.dirname(os.path.realpath(__file__))
-
-if not os.path.isfile("products.json"):
-    file = open("products.json", "w")
-    file.write("[]")
-    file.close()
-
-products_data = load_json(r"" + cwd + "/" + "products.json")
-products_list = []
+def check_if_data_exists():
+    if not os.path.isfile(json_filename):
+        file = open(json_filename, "w")
+        file.write("[]")
+        file.close()
 
 
 def main():
+    check_if_data_exists()
+    global products_data
+    products_data = load_json(r"" + cwd + "/" + json_filename)
     product_init()
     menu()
 
@@ -50,8 +55,7 @@ def menu():
 
 def add_product():
     """
-    Add product(s) to the product-list and updates
-    products.json
+    Add product(s) to the product-list and updates json-data
     """
 
     # Need URL, date, price and shop
@@ -70,18 +74,18 @@ def add_product():
     # Adds the product to the existing list
     products_list.append(Product(new_product))
 
-    # Adds the product to the products.json data
+    # Adds the product to the  data
     products_data.append(new_product)
 
-    # Updates products.json with the new product
-    with open("products.json", "w") as json_file:
+    # Updates with the new product
+    with open(json_filename, "w") as json_file:
         json.dump(products_data, json_file, indent=2)
 
 
 def remove_product():
     """
     Removes product(s) from the product-list
-    and updates products.json
+    and updates json-data
     """
 
     remove_index = int(input("Which product do you want to remove? ")) - 1
@@ -89,11 +93,11 @@ def remove_product():
     # Removes the product from existing list
     products_list.pop(int(remove_index))
 
-    # Removes the product from the products.json data
+    # Removes the product from the json-file data
     products_data.pop(int(remove_index))
 
-    # Updates products.json with the removed product
-    with open("products.json", "w") as json_file:
+    # Updates json-file with the removed product
+    with open(json_filename, "w") as json_file:
         json.dump(products_data, json_file, indent=2)
 
 
