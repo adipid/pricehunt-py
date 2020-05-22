@@ -7,7 +7,7 @@ Use cron jobs, see [crontab.guru](https://crontab.guru/) to figure out the sched
   command help](https://www.computerhope.com/unix/ucrontab.htm).
   
 ```
-*/30 * * * * /LOCATION/OF/PYTHON/python3 /LOCATION/OF/SCRIPT/pricehunt-py/background.py
+*/30 * * * * /LOCATION/OF/PYTHON/python3 /LOCATION/OF/SCRIPT/pricehunt-py/checker.py
 ```
   
 On Windows, cron` is not installed by default. Use the [Windows Task Scheduler](https://en.wikipedia.org/wiki/Windows_Task_Scheduler) instead, or see this [StackOverflow

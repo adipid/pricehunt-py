@@ -115,7 +115,7 @@ def detailed_list():
 
 
 def run_checker():
-    os.system("python3 background.py")
+    os.system("python3 checker.py")
 
 
 menu_options = {
