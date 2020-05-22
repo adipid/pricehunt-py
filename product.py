@@ -1,3 +1,5 @@
+import os
+
 import requests
 from bs4 import BeautifulSoup
 from datetime import date, datetime
@@ -14,8 +16,7 @@ class Product:
         self.shop = data["shop"]
         self.last_check_price = 0
 
-        response = requests.get(self.url)
-        self.soup = BeautifulSoup(response.text, "html.parser")
+        self.check_if_local_file()
 
         self.name = self.soup.find('h1', attrs={'class': 'product-title'}).text.strip()
         self.price = self.soup.find_all('div', attrs={'class': 'product-price'})[0]["data-price"]
@@ -29,3 +30,13 @@ class Product:
             self.open_policy = "Yes"
         else:
             self.open_policy = "No"
+
+    def check_if_local_file(self):
+        if "http" in self.url:
+            response = requests.get(self.url)
+            self.soup = BeautifulSoup(response.text, "html.parser")
+        else:
+            cwd = os.path.dirname(os.path.realpath(__file__))
+            page = open(cwd + "/tests/" + self.url)
+            self.soup = BeautifulSoup(page.read(), "html.parser")
+            page.close()

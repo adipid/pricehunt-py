@@ -33,11 +33,11 @@ class PricehuntTest(unittest.TestCase):
         self.assertEqual("Apple Watch Series 5 Cellular 44mm", products_list[2].name)
 
     def test_lowest_price_product0(self):
-        self.assertEqual("769", products_list[0].price)
+        self.assertEqual("1149", products_list[0].price)
 
     def test_compare_price_product0(self):
         diff = price_checker.compare_prices(products_list[0].price, products_list[0].purchased_price)
-        self.assertEqual("430", diff)
+        self.assertEqual("50", diff)
 
     def test_open_policyFalse(self):
         self.assertFalse(price_checker.open_policy(61, "Komplett.no"))
